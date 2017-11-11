@@ -52,8 +52,25 @@ $(function() {
 
         //set src = badge image URL
         imageElement.setAttribute("src", badgeImageURL);
- 
-      }
+
+        //create a element
+        var linkElement = document.createElement("a");
+
+        //adds 'a' element to class="course" div
+        divElement.appendChild(linkElement);
+        var courseURL = completedCourse[i].url;
+
+        //adds attributes to 'a' element
+        linkElement.setAttribute("href", courseURL);
+        linkElement.setAttribute("target", "_blank");
+
+        //add button classes to buttons
+        linkElement.className = "btn btn-primary";
+        
+        //adds text to buttons
+        linkElement.innerHTML = "See Course";
+        
+       }
     }
   })
     
