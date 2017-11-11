@@ -13,19 +13,26 @@ $(function() {
       for(var i = 0; i < completedCourse.length; i++){
         console.log("for loop course title: " + completedCourse[i].title);
 
-        titleCompletedCourse = completedCourse[i].title
-
+        var titleCompletedCourse = completedCourse[i].title
         var divElement = document.createElement("div"); //creates each div
         divElement.className = "course"; //add class="course" to each div
-        var badgeClassList = document.getElementById("badges").classList;
         
-        console.log("Badge Class list: " + badgeClassList);
-
+        
         var titleText = document.createTextNode(titleCompletedCourse);
         console.log(titleText);
-        divElement.appendChild(titleText);
-
+        //divElement.appendChild(titleText);
         document.getElementById("badges").appendChild(divElement);  
+
+        var badgesElement = document.getElementById("badges");
+        var hThreeElement = document.createElement("h3");
+
+        divElement.appendChild(hThreeElement);
+        hThreeElement.appendChild(titleText);
+        //var hThreeElement = document.createElement("h3");
+        //var courseClass = document.getElementsByClassName("course").appendChild(hThreeElement);
+        
+        
+
       }
     }
   })
