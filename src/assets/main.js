@@ -15,13 +15,15 @@ $(function() {
 
         titleCompletedCourse = completedCourse[i].title
 
-        var divElement = document.createElement("div");
-        var addClass = document.getElementById("badges").classList;
-        addClass.add("course");
+        var divElement = document.createElement("div"); //creates each div
+        divElement.className = "course"; //add class="course" to each div
+        var badgeClassList = document.getElementById("badges").classList;
+        
+        console.log("Badge Class list: " + badgeClassList);
 
-        var testText = document.createTextNode(titleCompletedCourse);
-        console.log(testText);
-        divElement.appendChild(testText);
+        var titleText = document.createTextNode(titleCompletedCourse);
+        console.log(titleText);
+        divElement.appendChild(titleText);
 
         document.getElementById("badges").appendChild(divElement);  
       }
